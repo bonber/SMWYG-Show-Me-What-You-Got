@@ -72,7 +72,10 @@ def cmdDomainSearch():
 
 	div = soup.find('div', {"class": "col-md-6 fullheight bottombar centerbar pt-3 mb-lg-2 pb-lg-2"})
 
-	print (div.get_text())
+	try:
+		print (div.get_text())
+	except AttributeError:
+		print ("No hay datos")
 
 def cmdEmailSearch():
 	Email = input('Enter Email Address:').lower()
@@ -85,7 +88,10 @@ def cmdEmailSearch():
 
 	div1 = soup.find('div', {"class": "col-md-6 fullheight bottombar centerbar pt-3 mb-lg-2 pb-lg-2"})
 
-	print (div1.get_text())
+	try:
+		print (div1.get_text())
+	except AttributeError:
+		print ("No hay datos")
 	
 cmds = {
 	"1" : cmdDomainSearch,
